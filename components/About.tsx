@@ -36,10 +36,7 @@ function About({pageInfo}: Props) {
           background
         </h4>
         <p className="text-base">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ipsam
-          consequatur error amet necessitatibus tenetur tempora, placeat itaque,
-          ratione fugit perspiciatis molestiae eveniet vel! Vero aut nesciunt
-          mollitia ab quas.
+          {pageInfo.backgroundInformation}
         </p>
       </div>
     </div>

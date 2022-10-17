@@ -7,7 +7,7 @@ type Props = {
   item:Experience
 }
 
-function ExperienceCard({item}: Props) {
+function ExperienceCard({item}:Props) {
   return (
     <article key={item._id} className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 opacity-40 hover:opacity-100 cursor-pointer overflow-hidden transition-opacity duration-200 ">
       <motion.img
@@ -28,12 +28,12 @@ function ExperienceCard({item}: Props) {
       />
       <div className="px-0 md:px-10">
         <h4 className="text-4xl font-light">{item.jobTitle}</h4>
-        <p className="font-bold text-2xl mt-1">papafam</p>
         <div className="flex space-x-2 my-2 items-center">
           {item.technologies.map((tech) => (
             <img
+              key={tech._id}
               className="rounded-full  h-10 w-10"
-              src={urlFor(tech?.image).url()}
+              src={urlFor(tech.image).url()}
               alt=""
             />
           ))}
@@ -46,8 +46,8 @@ function ExperienceCard({item}: Props) {
             : new Date(item.dateEnded).toDateString()}
         </p>
         <ul className="list-disc space-y-4 ml-5 text-lg ">
-          {item.points.map((point, i) => (
-            <li key={i} className='capitalize font-light'>{point}</li>
+          {item.points.map((point) => (
+            <li key={point} className='capitalize font-light'>{point}</li>
           ))}
         </ul>
       </div>
