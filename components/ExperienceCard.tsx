@@ -24,7 +24,7 @@ function ExperienceCard({item}:Props) {
         }}
         src={urlFor(item?.companyImage).url()}
         alt=""
-        className="w-20 h-20 rounded-full xl:w-[200px] xl:h-[200px] object-contain object-center"
+        className="w-32 h-32 rounded-full xl:w-[200px] xl:h-[200px] object-contain object-center"
       />
       <div className="px-0 md:px-10">
         <h4 className="text-4xl font-light">{item.jobTitle}</h4>
