@@ -1,4 +1,4 @@
-import type { GetStaticProps, NextPage } from "next";
+import type { GetServerSideProps, GetStaticProps, NextPage } from "next";
 import { useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
@@ -76,7 +76,7 @@ const Home = ({ experience, skills, projects, socials ,pageInfo}: Props) => {
 
 export default Home;
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+export const getServerSideProps:GetServerSideProps<Props> = async () => {
   const pageInfo: PageInfo = await fetchPageInfo();
   const skills: Skill[] = await fetchSkills();
   const experience: Experience[] = await fetchExperience();
